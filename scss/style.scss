@@ -1,0 +1,168 @@
+
+$averageColor: #FD8B7B;
+
+body {
+  margin:0;
+  padding:0;
+}
+
+main {
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+}
+
+h2 {
+  margin-top: 130px;
+}
+
+.sort-buttons-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  @media(max-width: 812px){
+    display: block;
+  }
+
+  .sort {
+    cursor: pointer;
+    min-width: 120px;
+    text-align: center;
+    padding: 3px;
+    margin: 0 10px 10px 0 ;
+  }
+}
+
+.zno-axis > .tick {
+  fill: $averageColor;
+}
+
+.zno-axis > path.domain {
+  stroke: $averageColor;
+}
+
+.zno-axis > .tick > .text {
+  fill: $averageColor !important;
+}
+
+
+
+
+
+.teams {
+  fill: none;
+  stroke: #aaa;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-width: 1.5px;
+}
+
+.team--hover {
+  stroke: #000;
+}
+
+.tooltip {
+ // display: none;
+  text-align: center;
+  padding: 5px;
+  position: absolute;
+  width: 150px;
+  height: max-content;;
+  pointer-events: none;
+  background: white !important;
+  border: 1px solid $averageColor !important;
+  color: black !important;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.focus text {
+  text-anchor: middle;
+  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+}
+
+.voronoi path {
+  fill: none;
+  pointer-events: all;
+}
+
+.active {
+  border: 1px solid black;
+}
+
+#form {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+
+
+p {
+  font-size: 18px;
+}
+
+.grey {
+  color: grey;
+}
+
+
+.chart-wrapper {
+  max-width: 800px;
+  width: 100%;
+}
+
+
+
+#chart_4 {
+  path.domain {
+    display: none;
+  }
+}
+
+
+#chart_3 {
+  .y-axis path.domain {
+    display: none;
+  }
+}
+
+
+#chart_2, #chart_static {
+  .tick text {
+    font-size: 13px;
+  }
+}
+
+
+#chart_3, #chart_4, #chart_5, #chart_6 {
+  .tick text {
+    fill: grey;
+    font-size: 13px;
+  }
+}
+
+#chart_5, #chart_6 {
+  path.domain {
+    display: none;
+  }
+
+  .tick line {
+    stroke: lightgrey;
+  }
+}
+
+.axis-labels {
+  fill: grey;
+}
+
+
+.tippy-box {
+  background: white !important;
+  border: 1px solid $averageColor !important;
+  color: black !important;
+  font-size: 16px;
+}
+
+
+
+

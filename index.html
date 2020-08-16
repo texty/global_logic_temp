@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ЗНО з математики</title>
+    <link href="css/style.css" rel="stylesheet"/>
+
+
+    <!--<link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css"/>-->
+
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+</head>
+
+<body>
+    <main>
+        <div id="fantom" style="max-width: 800px; margin: auto; width: 100%;"></div>
+
+        <div id="map"></div>
+
+        <!-- скільки склали, середній бал та 180+ -->
+        <div id="chart_2_wrapper" class="chart-wrapper">
+            <h2>Регіональний розподіл тих, хто складав ЗНО у 2019 році</h2>
+            <p>Цей графік показує, як складали ЗНО з математики випускники з різних регіонів. Так ми бачимо середні показники, а також можемо виокремити лідерів за успішністю.</p>
+                <p><b>Сортувати за:</b></p>
+                <div class="sort-buttons-wrapper">
+                    <div class="sort active" value="plus_180_percent" style="background-color: #C0C750;">склали на 180+, %</div>
+                    <div class="sort" value="plus_160_percent" style="background-color: #FFD65E;">склали на 160+, %</div>
+                    <div class="sort" value="path_math_percent" style="background-color: #E1DDDD;">склали, %</div>
+                    <div class="sort" value="average_zno" style="background-color: #FD8B7B;">середній бал ЗНО</div>
+                </div>
+            <svg id="chart_2"></svg>
+        </div>
+
+
+
+        <!--Відсоток фопів по містах-->
+        <div class="chart-wrapper">
+            <h2>Відсоток ІТ-ФОП у 5 найбільших містах України у 2019 році</h2>
+            <p>Графік демонструє відсоток ІТ-ФОПів серед усіх ІТ-ФОП, зареєстрованих у топ-5 найбільших містах України.</p>
+            <svg id="chart_static"></svg>
+        </div>
+
+
+
+        <!-- по роках + rank -->
+        <div class="chart-wrapper">
+            <h2>Результати ЗНО з математики протягом останніх 4 років. Відсоток 180+ по областях.</h2>
+            <p>Протягом останніх 4 років результати ЗНО у кожному регіоні стабільні у часі. Ми порахували відсоток випускників, які складають ЗНО з математики на 180+.  2017 рік був легший, і в усіх областях більше людей отримали відмінно. Так, наприклад, видно, що Чернівецька область посідає останнє місце 4 роки поспіль. Загалом найчастіше зміни по регіонах за цей період незначні.</p>
+            <p class="grey">Наведіть на лінію, щоб побачити відсотки по роках</p>
+            <svg id="chart_3"></svg>
+        </div>
+
+
+
+
+
+        <!-- по типу міста -->
+        <div id="chart_4_wrapper" class="chart-wrapper">
+            <h2>Розподіл тих, хто складає ЗНО з математики на 180+, залежно від розміру міста у 2019 році</h2>
+            <p>Розмір міста має значення. Так чим більше місто, тим краще випускники складають ЗНО з математики.70% усіх відмінних оцінок генерують найбільші міста. Також можна помітити тенденцію, що села в усіх областях складають ЗНО з математики погано. Єдиним позитивним виключенням є Львівська область.
+            </p>
+            <p><b>Сортувати за розміром наслеленого пункта:</b></p>
+            <div class="sort-buttons-wrapper">
+                <div class="sort active" value="Village" style="background-color: #E1DDDD">до 20 випусників</div>
+                <div class="sort" value="City1" style="background-color: #E1DDDD">20-100 випусників</div>
+                <div class="sort" value="City2" style="background-color: #E1DDDD">100-500 випусників</div>
+                <div class="sort" value="City3" style="background-color: #E1DDDD">500-1000 випусників</div>
+                <div class="sort" value="BigCity" style="background-color: #E1DDDD">1000+ випусників</div>
+            </div>
+            <svg id="chart_4"></svg>
+        </div>
+
+
+
+
+        <!--Кореляція між кількістю ІТ-ФОПів та випускників, що складають на 180+, у містах-виключеннях у 2019 році -->
+        <div class="chart-wrapper">
+            <h2>Зв’язок між кількістю ІТ-ФОПів та кількістю випускників-відмінників з математики у 2019 році</h2>
+            <p>На цьому графіку ми бачимо, яка кореляція в обласних центрах України і скільки % випускників складають математику на відмінно. Чим вище місто на графіку, тим більша кореляція, чим правіше - тим більший % випускників у цьому місті, які складають складають ЗНО з математики на 180+.</p>
+            <p class="grey">Наведіть на точку, щоб побачити назву міста</p>
+            <svg id="chart_5"></svg>
+        </div>
+
+
+
+
+        <div class="chart-wrapper">
+            <h2>Відсоток тих, хто склав на 180+ у сильних та слабких школах у 2019 році</h2>
+            <p>На цьому графіку відображено, скільки у містах шкіл з сильною та слабкою підготовкою. Залежно від кількості населення міста виділені різними кольорами. Помаранчеві - великі, жовті - в міру великі та сірі - середні. Чим вище місто, тим більше у місті шкіл із слабкою підготовкою, чим правіше - тим навпаки більше шкіл із сильною підготовкою</p>
+            <p class="grey">Наведіть на точку, щоб побачити назву міста</p>
+            <svg id="chart_6"></svg>
+        </div>
+
+
+    </main>
+
+
+
+
+    <script src="lib/d3v5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/HarryStevens/d3-regression@master/dist/d3-regression.min.js"></script>
+    <script src="lib/underscore-min.js"></script>
+    <script src="lib/share-behavior.js"></script>
+
+
+
+    <script src="js/variables.js"></script>
+    <script src="js/bars_static.js"></script>
+    <script src="js/draw__2.js"></script>
+    <script src="js/draw__4.js"></script>
+    <script src="js/draw__6.js"></script>
+    <script src="js/draw__5.js"></script>
+    <script src="js/draw__3.js"></script>
+    <script src="js/main.js"></script>
+
+
+
+
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-18136548-1']);
+        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</body>
+</html>
