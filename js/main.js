@@ -36,6 +36,11 @@ Promise.all([
         d3.select(this).classed("active", true);
         let sortValue = d3.select(this).attr("value");
         draw__stacked(input[0], sortValue);
+        if(sortValue === "average_zno"){
+            d3.selectAll(".average-label").style("display", "block")
+        } else {
+            d3.selectAll(".average-label").style("display", "none")
+        }
     });
 
 

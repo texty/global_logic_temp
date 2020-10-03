@@ -1,6 +1,6 @@
 const duration = 750;
 var red = "#FD8B7B";
-const stacked_margin = {top: 60, right: 30, bottom: 50, left: 110},
+const stacked_margin = {top: 10, right: 30, bottom: 50, left: 150},
     stacked_width =  d3.select("#fantom").node().getBoundingClientRect().width - stacked_margin.left - stacked_margin.right,
     stacked_height = 700 - stacked_margin.top - stacked_margin.bottom;
 
@@ -49,14 +49,14 @@ svg_2.append("text")
     .text("cклали ЗНО з математики");
 
 
-svg_2.append("text")
-    .attr("class", 'axis-labels')
-    .attr("transform",
-        "translate(" + (stacked_width/2) + " ," +
-        (-40) + ")")
-    .style("text-anchor", "start")
-    .text("cередній бал ЗНО з математики")
-    .style("fill", red);
+// svg_2.append("text")
+//     .attr("class", 'axis-labels')
+//     .attr("transform",
+//         "translate(" + (stacked_width/2) + " ," +
+//         (-40) + ")")
+//     .style("text-anchor", "start")
+//     .text("cередній бал ЗНО з математики")
+//     .style("fill", red);
 
 
 var stacked_color = d3
@@ -127,15 +127,15 @@ function draw__stacked(df, sort){
         .style('font-size', '13px');
 
 
-    svg_2.select(".zno-axis")
-        .transition()
-        .duration(0)
-        .attr("transform", "translate(0," + 0 + ")")
-        .call(d3.axisTop(zno_xScale)
-            .ticks(5)
-        )
-        .style('font-family', 'inherit')
-        .style('color', red);
+    // svg_2.select(".zno-axis")
+    //     .transition()
+    //     .duration(0)
+    //     .attr("transform", "translate(0," + 0 + ")")
+    //     .call(d3.axisTop(zno_xScale)
+    //         .ticks(5)
+    //     )
+    //     .style('font-family', 'inherit')
+    //     .style('color', red);
 
     svg_2.select(".x-axis")
         .transition()
@@ -215,4 +215,26 @@ function draw__stacked(df, sort){
         .transition().duration(duration)
         .attr("width", 1)
         .style("opacity", 1);
+
+
+    var text = svg_2.selectAll(".average-label")
+        .data(layers[0]);
+
+    text.exit().remove();
+
+    text.enter()
+        .append("text")
+        .attr("class", "average-label")
+        .attr("y", function (d) {  return stacked_yScale(d.data.oblast_ua) + stacked_yScale.bandwidth() - 3 ; })
+        .attr("x", function (d) {  return zno_xScale(d.data.average_zno)  + 5 })
+        .attr("fill", red)
+        .text(function(d){ return d.data.average_zno})
+        .merge(text)
+        .style("display", "none")
+        .transition().duration(duration)
+        .attr("y", function (d) {  return stacked_yScale(d.data.oblast_ua) + stacked_yScale.bandwidth() - 3 ; })
+        .attr("x", function (d) {  return zno_xScale(d.data.average_zno)  + 5 } )
+        .text(function(d){ return d.data.average_zno})
+
+
 }

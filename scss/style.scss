@@ -2,6 +2,7 @@
 $averageColor: #FD8B7B;
 
 body {
+  font-family: "Proxima Nova", sans-serif;
   margin:0;
   padding:0;
 }
@@ -25,11 +26,17 @@ h2 {
   }
 
   .sort {
+    border-radius: 5px;
     cursor: pointer;
     min-width: 120px;
     text-align: center;
-    padding: 3px;
+    padding: 5px 10px;
     margin: 0 10px 10px 0 ;
+    opacity: 0.7;
+  }
+
+  .sort:hover {
+    opacity: 1;
   }
 }
 
@@ -87,7 +94,8 @@ h2 {
 }
 
 .active {
-  border: 1px solid black;
+  border: 2px solid grey;
+  opacity: 1 !important;
 }
 
 #form {
@@ -102,13 +110,17 @@ p {
 }
 
 .grey {
-  color: grey;
+  //color: grey;
 }
 
 
 .chart-wrapper {
   max-width: 800px;
   width: 100%;
+}
+
+.average-label {
+  dosplay: none;
 }
 
 
@@ -152,7 +164,7 @@ p {
 }
 
 .axis-labels {
-  fill: grey;
+  //fill: grey;
 }
 
 
