@@ -85,6 +85,9 @@ p {
   max-width: 800px;
   width: 100%; }
 
+.average-label {
+  display: none; }
+
 #chart_4 path.domain {
   display: none; }
 

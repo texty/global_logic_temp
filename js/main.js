@@ -16,12 +16,12 @@ Promise.all([
     
     input[0].forEach(function(d){
         d.path_math_percent = +d.path_math_percent;
-        d.path_math_sort = d.path_math_percent;
+        // d.path_math_sort = d.path_math_percent;
         d.average_zno =  +d.average_zno;
         d.plus_160_percent = +d.plus_160_percent;
         d.plus_180_percent = +d.plus_180_percent;
         d.plus_160_percent =  d.plus_160_percent - d.plus_180_percent;
-        d.path_math_percent = d.path_math_percent - d.plus_160_percent - d.plus_180_percent;
+        d.path_math_difference = d.path_math_percent - d.plus_160_percent - d.plus_180_percent;
     });    
 
 
@@ -37,11 +37,11 @@ Promise.all([
         d3.select(this).classed("active", true);
         let sortValue = d3.select(this).attr("value");
         draw__stacked(input[0], sortValue);
-        // if(sortValue === "average_zno"){
-        //     d3.selectAll(".average-label").style("display", "block")
-        // } else {
-        //     d3.selectAll(".average-label").style("display", "none")
-        // }
+        if(sortValue === "average_zno"){
+            d3.selectAll(".average-label").style("display", "block")
+        } else {
+            d3.selectAll(".average-label").style("display", "none")
+        }
     });
 
 

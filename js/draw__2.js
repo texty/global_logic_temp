@@ -61,7 +61,7 @@ svg_2.append("text")
 
 var stacked_color = d3
     .scaleOrdinal()
-    .domain(["plus_180_percent", "plus_160_percent", "path_math_percent"])
+    .domain(["plus_180_percent", "plus_160_percent", "path_math_difference"])
     .range(['#C0C750', "#FFD65E", "#E1DDDD"]);
 
 
@@ -74,7 +74,7 @@ function draw__stacked(df, sort){
     var keys;
     if(sort != "average_zno"){
 
-        var key_arr = ["plus_180_percent", "plus_160_percent", "path_math_percent" ];
+        var key_arr = ["plus_180_percent", "plus_160_percent", "path_math_difference" ];
 
         for( var i = 0; i < key_arr.length; i++){
             if ( key_arr[i] === sort) {
@@ -85,13 +85,23 @@ function draw__stacked(df, sort){
 
         keys = [sort].concat(key_arr);
     } else {
-        keys = ["plus_180_percent", "plus_160_percent", "path_math_percent" ];
+        keys = ["plus_180_percent", "plus_160_percent", "path_math_difference" ];
     }
 
 
-    let data = df.sort(function(a, b) {
-        return a[sort] - b[sort];
-    });
+    var data;
+    if(sort ===  "path_math_difference"){
+        data = df.sort(function(a, b) {
+            return a["path_math_percent"] - b["path_math_percent"];
+        });
+    } else {
+        data = df.sort(function(a, b) {
+            return a[sort] - b[sort];
+        });
+    }
+
+
+
 
 
 
