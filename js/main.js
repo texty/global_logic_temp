@@ -25,7 +25,7 @@ Promise.all([
     });    
 
 
-    draw__stacked(input[0], "plus_180_percent");
+    draw__stacked(input[0], "path_math_difference");
     draw__villageSize(input[1], "Village");
     draw__lineChart(input[2]);
     draw__scatter(input[3]);
