@@ -36,7 +36,7 @@ svg_6.append("text")
         "translate(" + (width_school/2) + " ," +
         (height_school + margin_school.bottom - 5) + ")")
     .style("text-anchor", "start")
-    .text("сильні школи, 180+ у понад 15 випускників");
+    .text("відсоток сильних шкіл, 180+ у понад 15 випускників");
 
 
 svg_6.append("text")
@@ -46,7 +46,7 @@ svg_6.append("text")
     .attr("x",0 - (height_school / 2))
     .attr("dy", "1em")
     .style("text-anchor", "start")
-    .text("слабкі школи, 180+ до 3 випускників");
+    .text("відсоток слабких шкіл, 180+ до 3 випускників");
 
 
 //points container

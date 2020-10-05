@@ -230,7 +230,7 @@ function draw__stacked(df, sort){
         .attr("fill", red)
         .text(function(d){ return d.data.average_zno})
         .merge(text)
-        .style("display", "none")
+        //.style("display", "none")
         .transition().duration(duration)
         .attr("y", function (d) {  return stacked_yScale(d.data.oblast_ua) + stacked_yScale.bandwidth() - 3 ; })
         .attr("x", function (d) {  return zno_xScale(d.data.average_zno)  + 5 } )
