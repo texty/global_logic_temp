@@ -78,7 +78,7 @@ h2 {
   top: 20px;
   right: 30px; }
 
-p {
+p, li {
   font-size: 18px; }
 
 .chart-wrapper {
