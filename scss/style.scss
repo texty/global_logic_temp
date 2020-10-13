@@ -7,6 +7,18 @@ body {
   padding:0;
 }
 
+header {
+  max-width: 1200px;
+  display: flex;
+  margin: auto;
+  min-height: 30vh;
+
+  h1 {
+    margin: auto 0;
+    text-align: left;
+  }
+}
+
 main {
   max-width: 1200px;
   width: 90%;
@@ -15,6 +27,13 @@ main {
 
 h2 {
   margin-top: 50px;
+}
+
+.credits {
+  margin-bottom: 50px;
+  text-align: right;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .sort-buttons-wrapper {
@@ -107,6 +126,7 @@ h2 {
 
 p, li {
   font-size: 18px;
+  width: 80%;
 }
 
 .grey {
@@ -117,6 +137,7 @@ p, li {
 .chart-wrapper {
   max-width: 800px;
   width: 100%;
+  margin-bottom: 100px;
 }
 
 .average-label {
